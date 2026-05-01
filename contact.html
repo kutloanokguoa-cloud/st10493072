@@ -3,8 +3,183 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!--CSS Internal styling-->
+<style>
+  body
+  {
+    font-family:'Times New Roman', Times, serif;
+    background-color:rgb(228, 204, 228);
+    background-image: url(./img/name.jpeg); 
+  }
+  .nav-links a {
+    color: palevioletred;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: background 0.3s;
+  }
+    .nav-links a:hover {
+      background-color: rgb(161, 118, 202);
+      border: radius 4px;
+    }
+    nav {
+        background-color: rgb(150, 78, 78);
+        box-shadow: 0 2px 6p rgb(160, 87, 87);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 0 30px;
+    height: 60px;
+
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.nav-links li{
+    postion:relative;
+}
+.nav-links a {
+    color: aliceblue;
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+    transition: backgorund 0,3s;
+}
+.nav-links :hover{
+    background-color: rgb(255, 140, 217);
+    boarder-radius: 4px;
+}
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    background-color: rgb(189, 146, 189);
+    list-style: none;
+    min-width: 4px;
+    border-radius: 4px;
+    z-index: 100;
+}
+.submenu li a {
+    padding: 10px 15px;
+    color: rgb(174, 174, 241);
+}
+
+.submenu li a:hover {
+    background-color: rgb(171, 159, 182)
+}
+@media (min-width:769px) {
+    .nav-links li:hover>.submenu
+    display: block;
+}
+
+/*hamburger menu*/
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    backgound: 4px 0;
+    border-radius: 2px
+    transition: 0,3;
+}
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position:absolute;
+        top: 60px;
+        left: 0;
+        background-color: rgb(247, 177, 200);
+        width: 100%;
+        flex-direction: column;
+        gap:0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    .nav-links a:hover{
+        background-color: rgb(160, 133, 160);
+        border-radius: 4px;
+    }
+
+    .nav-links.open {
+        max-height: 500px;
+    }
+
+    .nav-links li{
+        width:100%;
+    }
+
+    .submenu {
+        position: static;
+        display: none;
+        background-color: rgb(152, 152, 255);
+    }
+
+    .submenu.open {
+        display: block;
+    }
+
+    .nav-links a {
+        padding: 15px;
+    }
+
+ }
+
+  
+</style>
 </head>
+
 <body>
+  <nav>
+        <div class="hambuger" id="hambuger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-links" id= "nav-links">
+            <li><a href="#">Home</a></li>
+
+            <li>
+                <a href="#" class="submenu-toggle"> Service </a>
+                <ul class="submenu" >
+            <li><a href="#"> Home</a></li>
+            <li><a href="#"> Ruffle Hats</a></li>
+            <li><a href="#"> Beanies</a></li>
+            <li><a href="#"> Bikini Tops</a></li>
+
+                <a href="#" class="submenu-toggle">Shop </a>
+                <ul class="submenu">
+                    <li><a herf="#">Ruffle Hats</a></li>
+                    <li><a href="#">Slouchy Beanies</a></li>
+                    <li><a href="#">Bikini Tops</a></li>
+                </ul>
+
+            </li>
+            <li><a href="./About.html">About</a></li>
+            <li><a href="./contact.html">contact</a></li>
+            <li><a href="./service.html">service</a></li>
+  
+        
+                <u/ul>
+                </u><div>
+            </li><nav>
+
 
 <h3>Contact Form</h3>
 
@@ -27,5 +202,39 @@
 </div>
 
 </body> 
+<footer>
+    <div class="footer-logo">
+        <h2>Zee Crochets</h2>
+        <p>handmade.thoughtful.made to order.</p>
+    </div>
+    <div class="footer-links">
+        <h3> Quick Link</h3>
+        <ul>
+            <li><a herf="#">Home</a></li>
+            <li><a herf="#">Shop</a></li>
+            <li><a herf="#">Tutorials</a></li>
+            <li><a herf="#">Contact us</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-contact">
+        <h3> Contact Us</h3>
+        <p> +27 60 278 5777</p>
+        <p>zamagebazulu@icloud.com</p>
+        <div class="footer-social">
+            <a herf="#">_</a>
+            <a herf="#">_</a>
+            <a herf="#">_</a>
+            <a herf="#">_</a>
+            <div>
+            </div>
+
+            <div class="footer-newletter">
+                <h3>Newletters</h3>
+                <p> Follow our social media pages for more recent offers and updates.</p>
+            </div>
+        </div>
+            </div>
+</footer>
 </html>
 
