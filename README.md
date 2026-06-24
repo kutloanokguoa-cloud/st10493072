@@ -63,7 +63,8 @@ Target Date
  20 Novemebr 2026 
  
 Improvement from part 1 
- Many chages have taken place form part one till the last part of developing the website. Colour theme of purple and pink and has been added to all the pages to make the girly aesthetic come togethere. Added character to the wesite by changing font and images in the different pages , new video has been added. Ive added navigation and a newslatter to the website and indication of our social media pages has been added. Css and javascript have been implemented tio make the website more appealing to the3 eyes and attention grabbing. 
+
+ Many chages have taken place form part one till the last part of developing the website. Colour theme of purple and pink and has been added to all the pages to make the girly aesthetic come togethere. Added character to the wesite by changing font and images in the different pages , new video has been added. I've added navigation and a newslatter to the website and indication of our social media pages has been added. Css and javascript have been implemented to make the website more appealing to the eyes and attention grabbing. 
  
 
 9. Recommendation / Ask
