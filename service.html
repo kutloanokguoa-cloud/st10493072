@@ -1,57 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services – Zee Crochets</title>
+    <link rel="stylesheet" href="./css/stylesheet.css">
+    <link rel="icon" href="./Icon/icon.png">
+
 </head>
 
-<body>
+<body style="background-image: url(./img/name.jpeg);">
+    <nav>
+        <div class="navbar">
+            <a href="./index.html" class="logo">Zee</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="./index.html">Home</a></li>
+                <li>
+                    <a href="./service.html" class="submenu-toggle">Shop ▾</a>
+                    <ul class="submenu">
+                        <li><a href="#">Ruffle Hats</a></li>
+                        <li><a href="#">Slouchy Beanies</a></li>
+                        <li><a href="#">Bikini Tops</a></li>
+                    </ul>
+                </li>
+                <li><a href="./About.html">About</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<h2>Available Shop Products</h2>
-<p>Customise to your prefrence</p>
-<br>
+    <h2 style="text-align:center; margin: 24px 0 8px;">Available Shop Products</h2>
+    <p style="text-align:center; margin-bottom: 20px;">Customise to your preference</p>
 
-<div class="row">
-  <div class="column">
-    <div class="card">
-      <img src="./img/IMG_8320.jpeg" alt="Jane" style="width:100%">
-      <div class="container">
-        <h2>Ruffle hat </h2>
-        <p class="title">Mutli-colured</p>
-        <p>Black and White strips with extra ruffles</p>
-        <p>R280</p>
-        <p><button class="button">See more...</button></p>
-      </div>
-    </div>
-  </div>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <img src="./img/b&w ruffle.jpeg" alt="Black and white ruffle hat">
+                <div class="container">
+                    <h2>Ruffle Hat</h2>
+                    <p class="title">Multi-coloured</p>
+                    <p>Black and white stripes with extra ruffles</p>
+                    <p><strong>R280</strong></p>
+                    <p><button class="button">See more...</button></p>
+                </div>
+            </div>
+        </div>
 
-  <div class="column">
-    <div class="card">
-      <img src="./img/IMG_8319.jpeg" alt="Mike" style="width:100%">
-      <div class="container">
-        <h2>Bucket Hat</h2>
-        <p class="title">Plain Black</p>
-        <p>Plain= R150</p>
-        <p>Multi-Coloured= R180</p>
-        <p><button class="button">See more...</button></p>
-      </div>
+        <div class="column">
+            <div class="card">
+                <img src="./img/black slouch.jpeg" alt="Black bucket hat">
+                <div class="container">
+                    <h2>Bucket Hat</h2>
+                    <p class="title">Plain Black</p>
+                    <p>Plain = R150</p>
+                    <p>Multi-Coloured = R180</p>
+                    <p><button class="button">See more...</button></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="./img/bikini top 1.jpeg" alt="Bikini top">
+                <div class="container">
+                    <h2>Bikini Top</h2>
+                    <p class="title">Customise your colour</p>
+                    <p>Small = R100</p>
+                    <p>Medium = R120 &nbsp;|&nbsp; Large = R140</p>
+                    <p><button class="button">See more...</button></p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <img src="./img/3b501c65-5bc9-400c-a3f7-9cf64b06e6c4.jpeg" alt="John" style="width:100%">
-      <div class="container">
-        <h2>Bikini Top</h2>
-        <p class="title">customise your colour available</p>
-        <p>Small= R100</p>
-        <p>Medium= R120
-            Large= R140</p>
-        <p><button class="button">See more...</button></p>
-      </div>
-    </div>
-  </div>
-</div>
 
 </body>
-</html>
 
+<footer>
+    <div class="footer-logo">
+        <h2>Zee Crochets</h2>
+        <p>handmade. thoughtful. made to order.</p>
+    </div>
+    <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Tutorials</a></li>
+            <li><a href="./contact.html">Contact us</a></li>
+        </ul>
+    </div>
+    <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>+27 60 278 5777</p>
+        <p>zamagebazulu@icloud.com</p>
+        <div class="footer-social">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">TikTok</a>
+            <a href="#">Pinterest</a>
+        </div>
+    </div>
+    <div class="footer-newsletter">
+        <h3>Newsletter</h3>
+        <p>Follow our social media pages for more recent offers and updates.</p>
+    </div>
+</footer>
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    const submenuToggles = document.querySelectorAll('.submenu-toggle');
+
+    //Toogle hamburber menu open/close
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('open');
+    })
+
+    //Toogle submenu on mobile tap
+    submenuToggles.forEach(toogle => {
+        toogle.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const submenu = toogle.nextElementSibling;
+                submenu.classList.toggle('open');
+            }
+        });
+    });
+</script>
+
+</html>
