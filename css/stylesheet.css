@@ -1,0 +1,441 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ── Slideshow ── */
+.slideshow-container {
+    position: relative; /* FIX: was "postion" */
+    margin: 5px 0 0 0;
+    max-height: 500px;
+}
+
+.mySlides, .myslides {
+    display: none;
+}
+
+.prev,
+.next { /* FIX: was two separate selectors with no comma, so .next rules never applied */
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease; /* FIX: was "0,6s" */
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover { /* FIX: was two separate selectors with no comma */
+    background-color: rgb(178, 157, 197);
+}
+
+.text {
+    color: aliceblue;
+    font-size: 15px; /* FIX: missing colon */
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+}
+
+.numbertext {
+    color: rgb(214, 155, 216);
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: pink;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease; /* FIX: was "0,6s" and missing semicolon */
+}
+
+.active,
+.dot:hover {
+    background-color: rgb(223, 126, 158);
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to   { opacity: 1; }
+}
+
+/* ── Body & Base ── */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(228, 204, 228);
+}
+
+/* ── Navbar ── */
+nav {
+    background-color: rgb(150, 78, 78);
+    box-shadow: 0 2px 6px rgb(160, 87, 87);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    height: 60px;
+}
+
+.logo {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: palevioletred;
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+    transition: background 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: rgb(161, 118, 202);
+    border-radius: 10px;
+}
+
+/* ── Submenu ── */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(189, 146, 189);
+    list-style: none;
+    min-width: 140px;
+    border-radius: 4px;
+    z-index: 100;
+}
+
+.submenu li a {
+    padding: 10px 15px;
+    color: rgb(174, 174, 241);
+}
+
+.submenu li a:hover {
+    background-color: rgb(171, 159, 182);
+}
+
+@media (min-width: 769px) {
+    .nav-links li:hover > .submenu {
+        display: block;
+    }
+}
+
+/* ── Hamburger ── */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background: orangered;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: rgb(247, 177, 200);
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    .nav-links a {
+        padding: 15px;
+    }
+
+    .nav-links a:hover {
+        background-color: rgb(160, 133, 160);
+        border-radius: 4px;
+    }
+
+    .nav-links.open {
+        max-height: 500px;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .submenu {
+        position: static;
+        display: none;
+        background-color: rgb(152, 152, 255);
+    }
+
+    .submenu.open {
+        display: block;
+    }
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ── Contact Form Inputs ── */
+#fname,
+#lname,
+#subject {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgb(224, 219, 219); /* FIX: was "boarder" */
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+#submit {
+    background-color: rgb(187, 83, 118);
+    color: whitesmoke;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#fname:hover,
+#Province:hover,
+#subject:hover {
+    background-color: rgb(157, 133, 180);
+}
+
+/* ── Contact Container ── */
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+}
+
+.container form label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+.container form input[type="text"],
+.container form select,
+.container form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.container form input[type="submit"] {
+    margin-top: 16px;
+    padding: 10px 24px;
+    background-color: rgb(150, 78, 78);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.container form input[type="submit"]:hover {
+    background-color: rgb(120, 58, 58);
+}
+
+/* ── Service / Shop Cards ── */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.column {
+    flex: 1 1 260px;
+    max-width: 320px;
+}
+
+.card {
+    background: rgba(255,255,255,0.85);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card .container {
+    padding: 16px;
+    background: transparent;
+    border-radius: 0;
+    margin: 0;
+    max-width: none;
+}
+
+.button {
+    background-color: rgb(150, 78, 78);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background-color: rgb(120, 58, 58);
+}
+
+/* ── About Page ── */
+.about-content {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 8px;
+    line-height: 1.8;
+}
+
+.about-content h1 { font-size: 1.6rem; margin-bottom: 10px; }
+.about-content h2 { font-size: 1.2rem; margin-bottom: 8px; color: rgb(150,78,78); }
+.about-content h3 { font-size: 1rem;   margin-bottom: 8px; }
+.about-content h4 { font-size: 0.95rem; margin-bottom: 16px; color: #777; }
+
+/* ── Footer ── */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px;
+    background-color: rgb(150, 78, 78);
+    color: white;
+    margin-top: 40px;
+}
+
+footer h2, footer h3 {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: rgb(247, 177, 200);
+    text-decoration: none;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 8px;
+}
+
+footer ul li a:hover,
+.footer-links ul li a:hover { /* FIX: was ".footer-links ul li a :hover" (space before :hover) */
+    color: rgb(253, 143, 161);
+}
+
+.footer-contact p {  /* FIX: was ".footer.contact p" */
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin-right: 10px; /* FIX: was "margin: right 10px" */
+    color: whitesmoke;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.footer-newsletter input[type="email"] { /* FIX: was [type-"email"] */
+    padding: 10px;
+    width: 70%;
+    border: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.footer-logo h2 {
+    font-size: 16px;
+    margin: 0 0 6px;
+    color: whitesmoke;
+}
+
+.footer-logo p {
+    font-size: 14px;
+    line-height: 1.6; /* FIX: was "1-6" */
+    color: whitesmoke;
+}
